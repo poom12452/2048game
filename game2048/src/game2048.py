@@ -154,8 +154,6 @@ class board:
             return 2
 
     def getBoard(self):
-        print("GETBOARD : "+str(self.boardMatrix))
-        print("")
         return self.boardMatrix
 
     def checkBoardEqual(self, board1, board2):

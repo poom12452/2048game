@@ -48,6 +48,7 @@ class controller:
         score = self.gameboard.getScore()
         self.view.render(boardMatrix, score)
 
-
+    def getBoard(self):
+        self.gameboard.getBoard()
 
 
