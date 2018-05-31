@@ -1,6 +1,7 @@
 import tkinter
 from src import game2048
 from src import view
+from src import robot
 
 class controller:
     def __init__(self, size):
@@ -12,11 +13,21 @@ class controller:
         self.window.bind('<Left>', self.moveleft)
         self.window.bind('<Right>', self.moveright)
         self.window.bind('<r>', self.restart)
+        self.window.bind('<c>', self.calNextMove)
+
         self.gameboard = game2048.board(size)
         boardMatrix = self.gameboard.getBoard()
         self.view.render(boardMatrix, 0)
 
-        tkinter.mainloop()
+        self.rbt = robot.Robot()
+
+        while 1:
+            self.window.update_idletasks()
+            self.window.update()
+
+
+    def calNextMove(self, event):
+        self.rbt.calNextMove(self.gameboard.getBoard())
 
     def restart(self, event):
         size = 4
