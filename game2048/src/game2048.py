@@ -7,11 +7,15 @@ class board:
     size = 0
     p4 = 0.1
     score = 0
+    lost_status = 0
 
     def __init__(self, size, p4 = 0.1):
         self.size = size
         self.initBoardMatrix(size)
         self.score = 0
+
+    def setlose(self):
+        self.lost_status = 1
 
     def initBoardMatrix(self, size):
         self.boardMatrix = [[0 for i in range(size)] for j in range(size)]
@@ -41,13 +45,15 @@ class board:
             newboard.append(line)
 
         if(self.checkBoardEqual(self.boardMatrix, newboard)):
-            print("hit border")
+            #print("hit border")
             return 0
         else:
             if(not test):
                 self.boardMatrix = newboard
                 self.updateScore()
                 return self.addtile()
+            else:
+                return 1
 
     def moveRight(self, test=0):
         ## feed each row into queue
@@ -55,7 +61,7 @@ class board:
         ## do fill
         newboard = []
         tempmatrix = [[0 for i in range(len(self.boardMatrix))] for j in range(len(self.boardMatrix))]
-        print("boardmatrix before: "+str(self.boardMatrix))
+        #print("boardmatrix before: "+str(self.boardMatrix))
         for i in range(len(self.boardMatrix)):
             for j in range(len(self.boardMatrix)):
                 tempmatrix[i][j] = self.boardMatrix[i][j]
@@ -66,17 +72,19 @@ class board:
             line = line.compress()
             line.reverse()
             newboard.append(line)
-        print("boardmatrix after:  "+str(self.boardMatrix))
-        print("tempmatrix after:   "+str(tempmatrix))
-        print("newboard :          "+str(newboard))
+        #print("boardmatrix after:  "+str(self.boardMatrix))
+        #print("tempmatrix after:   "+str(tempmatrix))
+        #print("newboard :          "+str(newboard))
         if(self.checkBoardEqual(self.boardMatrix, newboard)):
-            print("hit border")
+            #print("hit border")
             return 0
         else:
             if(not test):
                 self.boardMatrix = newboard
                 self.updateScore()
                 return self.addtile()
+            else:
+                return 1
 
     def moveUp(self, test=0):
         ## takang then move left
@@ -88,13 +96,15 @@ class board:
             newboard.append(line)
         newboard = [[newboard[i][j] for i in range(len(self.boardMatrix))] for j in range(len(self.boardMatrix))]
         if(self.checkBoardEqual(self.boardMatrix, newboard)):
-            print("hit border")
+            #print("hit border")
             return 0
         else:
             if(not test):
                 self.boardMatrix = newboard
                 self.updateScore()
                 return self.addtile()
+            else:
+                return 1
 
     def moveDown(self, test=0):
         newboard = []
@@ -109,13 +119,15 @@ class board:
 
         if(self.checkBoardEqual(self.boardMatrix, newboard)):
             ## the board is the same
-            print("Hit border")
+            #print("Hit border")
             return 0
         else:
             if(not test):
                 self.boardMatrix = newboard
                 self.updateScore()
                 return self.addtile()
+            else:
+                return 1
 
     def updateScore(self):
         score = 0
@@ -126,7 +138,7 @@ class board:
                 else:
                     tile_score = int((math.log(tile,2)-1)*tile)
                     score += tile_score
-                    print("tile = "+str(tile)+" score = "+str(tile_score))
+                    #print("tile = "+str(tile)+" score = "+str(tile_score))
         self.score = score
 
     def getScore(self):

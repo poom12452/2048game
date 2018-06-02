@@ -40,11 +40,11 @@ class queue:
     def printQueue(self):
         thisnode = self.firstnode.getNextNode()
         while(1):
-            print(thisnode.getNodeVal(), end=" ")
+            #print(thisnode.getNodeVal(), end=" ")
             thisnode = thisnode.getNextNode()
             if(thisnode == ''):
                 break
-        print("")
+        #print("")
 
     def compress(self):
         thisnode = self.firstnode.getNextNode()
