@@ -78,52 +78,27 @@ The method we did is to do matrix multiplication between sloped matrix and the b
 
 Define moved board as
 
-$$ board' = move_{direction}(board)$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$&space;board'&space;=&space;move_{direction}(board)$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{100}&space;\large&space;$$&space;board'&space;=&space;move_{direction}(board)$$" title="\large $$ board' = move_{direction}(board)$$" /></a>
 
 Define sloped matrix as
 
-$$slopematrix_{topleft} = \left[ 
-\begin{array}{cccc}
-6 & 5 & 4 & 3  \\
-5 & 4 & 3 & 2 \\
-4 & 3 & 2 & 1 \\
-3 & 2 & 1 & 0 \\
-\end{array} \right]$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$slopematrix_{topleft}&space;=&space;\left[&space;\begin{array}{cccc}&space;6&space;&&space;5&space;&&space;4&space;&&space;3&space;\\&space;5&space;&&space;4&space;&&space;3&space;&&space;2&space;\\&space;4&space;&&space;3&space;&&space;2&space;&&space;1&space;\\&space;3&space;&&space;2&space;&&space;1&space;&&space;0&space;\\&space;\end{array}&space;\right]$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{100}&space;\large&space;$$slopematrix_{topleft}&space;=&space;\left[&space;\begin{array}{cccc}&space;6&space;&&space;5&space;&&space;4&space;&&space;3&space;\\&space;5&space;&&space;4&space;&&space;3&space;&&space;2&space;\\&space;4&space;&&space;3&space;&&space;2&space;&&space;1&space;\\&space;3&space;&&space;2&space;&&space;1&space;&&space;0&space;\\&space;\end{array}&space;\right]$$" title="\large $$slopematrix_{topleft} = \left[ \begin{array}{cccc} 6 & 5 & 4 & 3 \\ 5 & 4 & 3 & 2 \\ 4 & 3 & 2 & 1 \\ 3 & 2 & 1 & 0 \\ \end{array} \right]$$" /></a>
 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$slopematrix_{topright}&space;=&space;\left[&space;\begin{array}{cccc}&space;3&space;&&space;4&space;&&space;5&space;&&space;6&space;\\&space;2&space;&&space;3&space;&&space;4&space;&&space;5&space;\\&space;1&space;&&space;2&space;&&space;3&space;&&space;4&space;\\&space;0&space;&&space;1&space;&&space;2&space;&&space;3&space;\\&space;\end{array}&space;\right]$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{100}&space;\large&space;$$slopematrix_{topright}&space;=&space;\left[&space;\begin{array}{cccc}&space;3&space;&&space;4&space;&&space;5&space;&&space;6&space;\\&space;2&space;&&space;3&space;&&space;4&space;&&space;5&space;\\&space;1&space;&&space;2&space;&&space;3&space;&&space;4&space;\\&space;0&space;&&space;1&space;&&space;2&space;&&space;3&space;\\&space;\end{array}&space;\right]$$" title="\large $$slopematrix_{topright} = \left[ \begin{array}{cccc} 3 & 4 & 5 & 6 \\ 2 & 3 & 4 & 5 \\ 1 & 2 & 3 & 4 \\ 0 & 1 & 2 & 3 \\ \end{array} \right]$$" /></a>
 
-$$slopematrix_{topright} = \left[ 
-\begin{array}{cccc}
-3 & 4 & 5 & 6  \\
-2 & 3 & 4 & 5 \\
-1 & 2 & 3 & 4 \\
-0 & 1 & 2 & 3 \\
-\end{array} \right]$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$slopematrix_{bottomleft}&space;=&space;\left[&space;\begin{array}{cccc}&space;3&space;&&space;2&space;&&space;1&space;&&space;0&space;\\&space;4&space;&&space;3&space;&&space;2&space;&&space;1&space;\\&space;5&space;&&space;4&space;&&space;3&space;&&space;2&space;\\&space;6&space;&&space;5&space;&&space;4&space;&&space;3&space;\\&space;\end{array}&space;\right]$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{100}&space;\large&space;$$slopematrix_{bottomleft}&space;=&space;\left[&space;\begin{array}{cccc}&space;3&space;&&space;2&space;&&space;1&space;&&space;0&space;\\&space;4&space;&&space;3&space;&&space;2&space;&&space;1&space;\\&space;5&space;&&space;4&space;&&space;3&space;&&space;2&space;\\&space;6&space;&&space;5&space;&&space;4&space;&&space;3&space;\\&space;\end{array}&space;\right]$$" title="\large $$slopematrix_{bottomleft} = \left[ \begin{array}{cccc} 3 & 2 & 1 & 0 \\ 4 & 3 & 2 & 1 \\ 5 & 4 & 3 & 2 \\ 6 & 5 & 4 & 3 \\ \end{array} \right]$$" /></a>
 
-$$slopematrix_{bottomleft} = \left[ 
-\begin{array}{cccc}
-3 & 2 & 1 & 0  \\
-4 & 3 & 2 & 1 \\
-5 & 4 & 3 & 2 \\
-6 & 5 & 4 & 3 \\
-\end{array} \right]$$
-
-$$slopematrix_{bottomright} = \left[ 
-\begin{array}{cccc}
-0 & 1 & 2 & 3  \\
-1 & 2 & 3 & 4 \\
-2 & 3 & 4 & 5 \\
-3 & 4 & 5 & 6 \\
-\end{array} \right]$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$slopematrix_{bottomright}&space;=&space;\left[&space;\begin{array}{cccc}&space;0&space;&&space;1&space;&&space;2&space;&&space;3&space;\\&space;1&space;&&space;2&space;&&space;3&space;&&space;4&space;\\&space;2&space;&&space;3&space;&&space;4&space;&&space;5&space;\\&space;3&space;&&space;4&space;&&space;5&space;&&space;6&space;\\&space;\end{array}&space;\right]$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{100}&space;\large&space;$$slopematrix_{bottomright}&space;=&space;\left[&space;\begin{array}{cccc}&space;0&space;&&space;1&space;&&space;2&space;&&space;3&space;\\&space;1&space;&&space;2&space;&&space;3&space;&&space;4&space;\\&space;2&space;&&space;3&space;&&space;4&space;&&space;5&space;\\&space;3&space;&&space;4&space;&&space;5&space;&&space;6&space;\\&space;\end{array}&space;\right]$$" title="\large $$slopematrix_{bottomright} = \left[ \begin{array}{cccc} 0 & 1 & 2 & 3 \\ 1 & 2 & 3 & 4 \\ 2 & 3 & 4 & 5 \\ 3 & 4 & 5 & 6 \\ \end{array} \right]$$" /></a>
 
 The AI then select the slopematrix that the most valued tile in the board is near the corner.
 
 Then the hueristic function for each board becomes
 
-$$ h(board) = || slopematrix \times board ||_{1} * p(board) = \sum_{i=0}^{dimension-1}\sum_{j=0}^{dimension-1} (slopematrix\times board)_{ij} * p(board)$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$&space;h(board)&space;=&space;||&space;slopematrix&space;\times&space;board&space;||_{1}&space;*&space;p(board)&space;=&space;\sum_{i=0}^{dimension-1}\sum_{j=0}^{dimension-1}(slopematrix\times&space;board)_{ij}&space;*&space;p(board)$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\dpi{100}&space;\large&space;$$&space;h(board)&space;=&space;||&space;slopematrix&space;\times&space;board&space;||_{1}&space;*&space;p(board)&space;=&space;\sum_{i=0}^{dimension-1}\sum_{j=0}^{dimension-1}(slopematrix\times&space;board)_{ij}&space;*&space;p(board)$$" title="\large $$ h(board) = || slopematrix \times board ||_{1} * p(board) = \sum_{i=0}^{dimension-1}\sum_{j=0}^{dimension-1}(slopematrix\times board)_{ij} * p(board)$$" /></a>
 
 Then AI perform
 
-$$ \mathop{\mathrm{argmax}}\limits_{move1,move2,move3}\{h(board''')\} $$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$&space;\mathop{\mathrm{argmax}}\limits_{move1,move2,move3}\{h(board''')\}&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\dpi{100}&space;\large&space;$$&space;\mathop{\mathrm{argmax}}\limits_{move1,move2,move3}\{h(board''')\}&space;$$" title="\large $$ \mathop{\mathrm{argmax}}\limits_{move1,move2,move3}\{h(board''')\} $$" /></a>
 ___
 
 ## Result
@@ -135,11 +110,12 @@ ___
 We measured 2 times
 1. Execution time - this is the time taken for finding the best move without communication from client to server, measured at server
 
-$$ time_{execution} = time_{server\_reply} - time_{server\_received} $$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$&space;time_{execution}&space;=&space;time_{server\_reply}&space;-&space;time_{server\_received}&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\dpi{100}&space;\large&space;$$&space;time_{execution}&space;=&space;time_{server\_reply}&space;-&space;time_{server\_received}&space;$$" title="\large $$ time_{execution} = time_{server\_reply} -
+time_{server\_received} $$" /></a>
 
 2. Total time - this is the total time taken from sending the state to the server until receiving nextmove back, measured at client
 
-$$ time_{total} = time_{client\_received} - time_{client\_sent} $$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$&space;time_{total}&space;=&space;time_{client\_received}&space;-&space;time_{client\_sent}&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\dpi{100}&space;\large&space;$$&space;time_{total}&space;=&space;time_{client\_received}&space;-&space;time_{client\_sent}&space;$$" title="\large $$ time_{total} = time_{client\_received} - time_{client\_sent} $$" /></a>
 
 And are illustrated below
 ```
@@ -171,10 +147,9 @@ It is very obvious that parallel program performs better from graphs above. Beca
 
 Recall Efficiency
 
-$$ Efficiency =  \frac{speedUp}{numProcessors}$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$&space;Efficiency&space;=&space;\frac{speedUp}{numProcessors}$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\dpi{100}&space;\large&space;$$&space;Efficiency&space;=&space;\frac{speedUp}{numProcessors}$$" title="\large $$ Efficiency = \frac{speedUp}{numProcessors}$$" /></a>
 Where
-$$ speedUp =  \frac{sequentialTime}{parallelTime}$$
-
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{100}&space;\large&space;$$&space;speedUp&space;=&space;\frac{sequentialTime}{parallelTime}$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\dpi{100}&space;\large&space;$$&space;speedUp&space;=&space;\frac{sequentialTime}{parallelTime}$$" title="\large $$ speedUp = \frac{sequentialTime}{parallelTime}$$" /></a>
 
 In our project we got
 ```
