@@ -161,7 +161,7 @@ ___
 
 ### Part 1 : Cloud Configuration
 
-To setup a host node and slaves node for mpi programming, we need to 
+To setup a host node and slaves node for MPI programming, we need to 
 ##### 1. Create Compute Engines Instances
 
 We are using 3 nodes configured as following
@@ -315,7 +315,7 @@ There sould be a test file in the output.
 
 
 ##### 6. Creating hostfile in master instance
-OpenMPI require a hostfile to address all the computation nodes. We need to create one and includes all the instances into the hostfile.
+Open MPI requires a hostfile to address all the computation nodes. We need to create one and includes all the instances into the hostfile.
 
 ```
 master:~ master$ cd ~/shared_folder
