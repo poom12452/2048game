@@ -1,3 +1,8 @@
+'''
+    This is the AI creating possibility tree and do bruteforce through
+    all the nodes in breadth first search manner.
+'''
+
 import copy
 import evaluation
 

@@ -1,3 +1,8 @@
+'''
+    This is view module, as in MVC pattern.
+    Handles GUI using Tkinter
+'''
+
 import tkinter
 from src.polygon import polygon
 

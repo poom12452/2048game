@@ -1,5 +1,5 @@
 
-# Parallel Computation on Cloud : 2048 game AI
+# Parallel Computation on Cloud : Case 2048 game AI
 ___
 
 1. Introduction
@@ -11,11 +11,9 @@ ___
 4. Discussion
    * Discussion on performance
    * Discussion on implementation
-       * cloud configuration
-       * client
-           - github client
-       * server
-           - github server
+       * Cloud configuration - installing MPI4PY and setting up
+       * Client side script
+       * Server side script - Parallel Program
    * How to use this project
 5. Conclusion
 6. Acknowledgement
@@ -439,3 +437,36 @@ NOTE: The Parallel Computing node will be running on cloud until (approx) July 1
     cd 2048game
     python3 main.py
     ```
+___Screenshot in the latest version___
+![v001](./image/v001.png)
+
+___
+
+### Part 5 : Conclusion 
+
+From the result above, it shows that parallel computing gives better computation time, which combined with repetitive calculation, and could help reduce total time to reach highscore faster. This really highlight the advantage of using parallel computing. Also MPI is a very useful communication method, using MPI with python could reduce a lot of developing time and the result is satisfying. Communication between server and client using SocketAPI is important as it allows us to send the problem from our machine to have to cloud compute it. This is cloud computing which is the point that this project stress on. 
+
+Despite being only a simulation of using HPC, this projects illustrate multiple consideration of designing a cluster of computation node, deployment of the system, parallel programming and evaluation of the result. This project also shows potential of parallel computing to solve more complex problems which, in fact, many organizations are using nowaday such as BitCoin mining or CERN's grid computing.
+
+There are some difficulties we faced in this project, some may be mitigated and some may be alive bugs in our program.
+1. There are more features that MPI provides which we did not fully used, such as MPI support InfiniBand communication method and the nodes could not satisfy, this is a point that reduce the system throughput.
+2. This project is not fault tolerance, some request into the program might caused it to stop execution.(a simple telnet with some string will do)
+3. GUI is not behaving right some times.
+
+Future Perspective and Improvement
+We would like to leave some thought that we stumbled upon during doing this project.
+
+1. Though parallel computing helps a lot to reduce computation time, but combining with hueristic searching and optimized algorithm would result a better program.
+2. Combining parallel computing, cloud computing and parallel programming might turn into an interesting thing. For example, a cluster of computation node that could compute a any function passed into them. (Cloud Map-Reduce)
+3. It would be better if we wrote tests from the very beginning of the development. As we proceded to later part, it is impossible to write all the tests and debugging this program in both parallel aspect, communication aspect and the game aspect itself was disastrous.
+
+There also are some more points that could improve this project such as better GUI and handling input, implement the server program that is more fault tolerant, use some optimized algorithm, and use more functions and advantages that MPI provides
+### Part 6 : Acknowledgement
+
+##### Contributors
+```
+Kriddanai Roong-uthai       5822780334
+Thanapong Maleewan          5822790275
+Kittikom Sangrit            5822790861
+```
+

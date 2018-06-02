@@ -1,3 +1,10 @@
+'''
+    This is interface that communicate between server and client GUI.
+    It provides socketAPI functionalities and time measuring functionality.
+    The protocol is to send size of the board and the board.
+
+'''
+
 import socket
 import time
 import random

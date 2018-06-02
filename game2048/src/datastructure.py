@@ -1,3 +1,7 @@
+'''
+    This module computes tiles mergeing using queue.
+'''
+
 class node:
     myVal = ''
     nextNode = ''
@@ -47,8 +51,10 @@ class queue:
         #print("")
 
     def compress(self):
+        ## see game logic as datastructure problem
         thisnode = self.firstnode.getNextNode()
         outlist = []
+
         while(1):
             if(thisnode == ''):
                 break
@@ -57,6 +63,7 @@ class queue:
                 outlist.append(thisnode.getNodeVal())
                 break
 
+            ## merge 2 nodes into 1
             if((thisnode.getNodeVal() == thisnode.getNextNode().getNodeVal()) and (thisnode.getNodeVal() != 0)):
                 outlist.append(thisnode.getNodeVal()*2)
                 thisnode = thisnode.getNextNode().getNextNode()

@@ -1,3 +1,10 @@
+'''
+    This class is the hueristic that we used to calculate the AI score for each board.
+    Initially we create two functions, but it turned out that slopedBoard outperformed sideStick.
+    Combining both will need some normalization that we haven't had time to do so.
+
+'''
+
 board1 = [[4,2,0,0], [2,2,0,0], [0,0,0,0], [0,0,0,0]]
 board2 = [[2,4,0,0], [0,0,2,2], [0,0,0,0], [0,0,0,0]]
 

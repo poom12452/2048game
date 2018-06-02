@@ -1,3 +1,6 @@
+'''
+    This class just create some reuseable code.
+'''
 import math
 
 class polygon:

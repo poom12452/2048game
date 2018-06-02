@@ -1,3 +1,8 @@
+'''
+    This module is the game.
+    class board holds attributes of a game, also includes scoring logic.
+'''
+
 import random
 import math
 from src import datastructure

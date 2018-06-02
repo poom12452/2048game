@@ -1,3 +1,11 @@
+'''
+    This is the route class(controller class in MVC pattern).
+    It performs as an interface for GUI and gaming logic and communication.
+
+
+'''
+
+
 import tkinter
 from src import game2048
 from src import view
