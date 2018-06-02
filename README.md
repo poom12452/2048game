@@ -182,7 +182,7 @@ gcloud compute --project=parallelproject-202805 instances create instance-templa
     --boot-disk-size=10GB\
     --boot-disk-type=pd-standard\
     --boot-disk-device-name=host1```
-    
+``` 
     
 We are running the server on __Ubuntu16.04__ with __g1-small CPU (1vCPU, 3.75GB Memory)__. Also preconfigured the VPC to allow communication on port 50007 for SocketAPI from the clients. We could do that by
 
